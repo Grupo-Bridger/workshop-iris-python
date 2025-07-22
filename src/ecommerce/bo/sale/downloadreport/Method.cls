@@ -26,6 +26,7 @@ ClassMethod Execute(pHost As ecommerce.bo.sale.Operation, pRequest As ecommerce.
 ClassMethod GeneratePdf(pReport As ecommerce.model.SalesReport) As %Stream.GlobalBinary [ Language = python ]
 {
 	# Preencher método
+	return ""
 }
 
 Storage Default
