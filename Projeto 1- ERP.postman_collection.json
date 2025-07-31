@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "ed54197f-cd04-4cb6-9412-26db4596523c",
+		"name": "Projeto 1: ERP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29173526"
+	},
+	"item": [
+		{
+			"name": "Produtos",
+			"item": [
+				{
+					"name": "Cria produto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Product\",\n    \"description\": \"An interesting description\",\n    \"sku\": \"0000001\",\n    \"price\": 10.39\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{IRIS}}/ecommerce/produto",
+							"host": [
+								"{{IRIS}}"
+							],
+							"path": [
+								"ecommerce",
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{IRIS}}/ecommerce/produto?lang=pt",
+							"host": [
+								"{{IRIS}}"
+							],
+							"path": [
+								"ecommerce",
+								"produto"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "pt"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pega produto por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{IRIS}}/ecommerce/produto/0000001?lang=pt",
+							"host": [
+								"{{IRIS}}"
+							],
+							"path": [
+								"ecommerce",
+								"produto",
+								"0000001"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "pt"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuários",
+			"item": [
+				{
+					"name": "Cria usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Bruno\",\n    \"email\": \"bruno0@email.com\",\n    \"phone\": \"12345678900\",\n    \"postalCode\": \"04705-000\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{IRIS}}/ecommerce/usuario",
+							"host": [
+								"{{IRIS}}"
+							],
+							"path": [
+								"ecommerce",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vendas",
+			"item": [
+				{
+					"name": "Cria venda",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"salesDate\": \"2025-06-23\",\n    \"rawValue\": 133.3,\n    \"discount\": 112\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{IRIS}}/ecommerce/venda",
+							"host": [
+								"{{IRIS}}"
+							],
+							"path": [
+								"ecommerce",
+								"venda"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista vendas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{IRIS}}/ecommerce/venda",
+							"host": [
+								"{{IRIS}}"
+							],
+							"path": [
+								"ecommerce",
+								"venda"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gera relatório faturamento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{IRIS}}/ecommerce/venda/relatorio?initialDate=2024-05-05&finalDate=2025-10-11",
+							"host": [
+								"{{IRIS}}"
+							],
+							"path": [
+								"ecommerce",
+								"venda",
+								"relatorio"
+							],
+							"query": [
+								{
+									"key": "initialDate",
+									"value": "2024-05-05"
+								},
+								{
+									"key": "finalDate",
+									"value": "2025-10-11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download relatório faturamento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{IRIS}}/ecommerce/venda/relatorio/download?initialDate=2024-05-05&finalDate=2025-10-01",
+							"host": [
+								"{{IRIS}}"
+							],
+							"path": [
+								"ecommerce",
+								"venda",
+								"relatorio",
+								"download"
+							],
+							"query": [
+								{
+									"key": "initialDate",
+									"value": "2024-05-05"
+								},
+								{
+									"key": "finalDate",
+									"value": "2025-10-01"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
