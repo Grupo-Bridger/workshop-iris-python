@@ -22,4 +22,5 @@ ClassMethod Transform(pSource As ecommerce.schema.ProductCreate, Output pTarget 
 		Return exception.AsStatus()
 	}
 }
+
 }
